@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 서버 개발 챌린지
-excerpt: "python, django, docker"
+excerpt: "django(python), MySQL, jsonAPI"
 categories: [개인 프로젝트]
 comments: true
 share : false
@@ -16,17 +16,19 @@ share : false
 ### 환경 구축
 환경 구축은 언제나 힘들다... 1/24에 날잡고 환경구축을 했었는데 그 때 배운 점을 노션에 기록한 걸 옮겨보려고 한다. ~~*아마 또 까먹었을 테니까*~~
 ##### 스택 목록
--[x]  MySQL 8.0.17 (for windows)
--[ ]  Python 3.6.5 → Python 3.8로 작업 (finalenv라는 venv로 작업)
--[ ]  Ubuntu 16.04 → Windows 10 Education으로 작업
--[x]  dj-database-url==0.5.0
--[x]  Django==2.2.4
--[x]  gunicorn==19.9.0
--[ ]  mysqlclient==1.4.4 → 1.4.6
--[x]  pytz==2019.2
--[x]  sqlparse==0.3.0
--[x]  whitenoise==4.1.3  
+- [x]  MySQL 8.0.17 (for windows)
+- [ ]  Python 3.6.5 → Python 3.8로 작업 (finalenv라는 venv로 작업)
+- [ ]  Ubuntu 16.04 → Windows 10 Education으로 작업
+- [x]  dj-database-url==0.5.0
+- [x]  Django==2.2.4
+- [x]  gunicorn==19.9.0
+- [ ]  mysqlclient==1.4.4 → 1.4.6
+- [x]  pytz==2019.2
+- [x]  sqlparse==0.3.0
+- [x]  whitenoise==4.1.3  
+
 * * *
+
 ### 1. 도커 탈락
 #### docker install for Windows 10 "Home"
 일단 이번에 도커를 제대로 해보려고 세팅~~하는 것 부터~~애를 먹었다. 일단 내 윈도우 10 이 Windows Home이라는게 문제였다..  

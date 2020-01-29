@@ -26,19 +26,18 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   enable_coderay: false
-
 #
 ###################################
 # Site Owner configuration
 ####################################
 #
 owner:
-  name: t3rry
-  avatar: profile.png
+  name: @t3rry
+  avatar: moca.png
   job: "University Student in Seoul"
-  bio: "EWU major in CyberSeucurity, Cadidate for Bachelor in 2021"
-  email: "cgc8016@ewhain.net"
-  disqus-shortname:
+  bio: "삽은 많다. 이번 삽은 얼마나 갈까."
+  email: #
+  disqus-shortname: #
   twitter: #username
   facebook: #username
   google:
@@ -50,7 +49,7 @@ owner:
   bing-verify:
   github: AMYMEME
   gitlab: #username
-  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+  stackoverflow: 12804021/amy
   linkedin: #username
   skype: #username
   xing: #username

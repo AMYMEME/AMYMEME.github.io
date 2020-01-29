@@ -1,10 +1,10 @@
 ---
 layout: default
 ---
-
-<a class="btn" href= "{{ site.url }}/" >
+<a class="btn" href= "{{ site.url }}/">
   Home
 </a>
+
 {% if page.image.feature %}
 <div class="post-image-feature">
   <img class="feature-image" src=
@@ -23,7 +23,7 @@ layout: default
 
 
 <div id="post">
-  <header class="post-header">
+  <header class="post-header" id="top">
     <h1 title="{{ page.title | escape }}">{{ page.title }}</h1>
     <span class="post-meta">
       <span class="post-date">
@@ -32,14 +32,13 @@ layout: default
       •
       {% include read_time.html %}
     </span>
-
   </header>
-
   <article class="post-content">
     {{ content }}
   </article>
 </div>
 
+{% if page.share == ture %}
 <div class="share-buttons">
   <h6>Share on: </h6>
   <ul>
@@ -60,6 +59,7 @@ layout: default
     </li>
   </ul>
 </div><!-- end share-buttons -->
+{% endif %}
 
 {% if site.owner.disqus-shortname and page.comments == true %}
 <div id="disqus_thread"></div>

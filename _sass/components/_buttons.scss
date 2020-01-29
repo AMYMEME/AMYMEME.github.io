@@ -90,3 +90,12 @@
     border-color: $info;
   }
 }
+
+#scrollTop{
+  display: none;
+  outline: none;
+  position: fixed;
+  bottom: 5%;
+  right: 3%;
+  z-index: 999;
+}
