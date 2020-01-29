@@ -99,4 +99,6 @@
   right: 3%;
   z-index: 99;
   opacity: 0.6;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: translateZ(99px);
 }
