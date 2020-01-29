@@ -3,7 +3,7 @@
   background-color: $white;
   position: absolute;
   top: 400px;
-  z-index: 233;
+  z-index: 1;
   width: 100%;
   padding: 20px 20px 0;
   -webkit-transform: translate3d(0,0,1px);
@@ -12,11 +12,11 @@
     padding: 50px 30px 0;
   }
   @include media-query($medium-screen) {
-    position: absolute;
-    width: 70%;
-    margin-left: 330px;
-    margin-right: 20px;
-    top: 0
+    position: initial;
+    width: 100%;
+    padding: 50px 30px 0 360px;
+    top: 0;
+    z-index: 0;
   }
 }
 
