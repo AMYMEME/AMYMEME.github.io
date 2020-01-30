@@ -1,4 +1,31 @@
-- name: leonids
-  descr: "Bacon ipsum dolor sit amet doner meatball jowl short ribs, chicken prosciutto salami frankfurter. Pig drumstick turducken short ribs, brisket meatloaf ham hock shankle andouille corned beef strip steak. Venison ham bresaola strip steak. Pork belly ribeye prosciutto t-bone."
-  image: pong.png
-  github: https://github.com/renyuanz/leonids
+- name: 사이버보안기초프로젝트
+  descr: "블룸필터를 이용한 검색 가능한 데이터베이스 암호화(MySQL DB Encryption by using salted SAH256 and bloomfilter), html, css, php를 이용한 간단한 로그인 웹 페이지 구현"
+  term: "2018.03.15. ~ 2018.06.01."
+
+- name: 악성코드프로젝트
+  descr: "'전기자동차 충전 인프라에서의 보안위협 및 새로운 모델 연구' 소논문 작성"
+  term: "2018.11.01. ~ 2018.12.13."
+
+- name: 서울시 R&D 지원사업 제 3회 서울혁신챌린지
+  descr: "abnormal packet detect platform using Machine Learning 개발 중 패킷처리 ML Model(1D CNN) 생성팀, 예선 통과 및 시제품 제작, 서울시장상 수여"
+  term: "2019.04.01. ~ 2019.12.12."
+
+- name: KO-WORLD 해킹방어대회
+  descr: "'생체인식과 블록체인을 활용한 환자 중심 의료 장부 관리 시스템' 논문 작성 및 발표, 예·본·결선 진출, 최종 장려상 수상"
+  term: "2019.06.05."
+
+- name: 2019 CTF(Capture The Flag, 해킹방어대회)s
+  descr: "participated in NACTF(Newark Academy CTF), PICO CTF, Power Of XX CTF"
+  term: "2019.09. ~ 2019.12."
+
+- name: 시큐어코딩프로젝트(Security Coding Project)
+  descr: "2019 행안부 SW 개발보안 가이드를 준수한 안전한 웹페이지 구현"
+  term: "2019.09.15. ~ 2019.12.01."
+
+- name: K-사이버 시큐리티 정보보호 R&D 데이터 챌린지
+  descr: "융합보안트랙 자동차용 침입 탐지 부문, 차량 내부 네트워크 데이터셋 기반 침입 탐지 알고리즘(Loose Ground Truth Algorithm) 개발, 예·본선 진출 및 최종 본선 3위, 한국정보보호학회회장상 수여"
+  term: "2019.11.22."
+
+- name: K-SW Summer Program
+  descr: "Make Custom RL(강화학습) Model for 2019 AIWC(AI World Cup)"
+  term: "2019.06.24. ~ 2019.08.16."
