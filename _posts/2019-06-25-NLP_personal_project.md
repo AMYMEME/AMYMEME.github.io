@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 단백질 이름 추출하기
-excerpt: "python(anaconda, jupyter notebook), NLP, Naive Baysian, Bag of words"
+excerpt: "python(anaconda, jupyter notebook), NLP, Naive Baysian, Bag of words, nltk"
 categories: [개인 프로젝트]
 comments: true
 share : false:q

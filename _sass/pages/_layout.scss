@@ -7,6 +7,7 @@
   min-height: 400px;
   padding: 30px 15px 20px;
   z-index: 0;
+  -webkit-transform: translateZ(0px);
   @include media-query($small-screen) {
     background-position: center;
     padding: 30px;
@@ -16,6 +17,7 @@
     position: fixed;
     width: 300px;
     z-index: 1;
+    -webkit-transform: translateZ(1px);
   }
 }
 .cover-card {
