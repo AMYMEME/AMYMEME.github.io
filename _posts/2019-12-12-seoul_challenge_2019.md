@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 제 3회 서울혁신챌린지
-excerpt: "python(vevn, Ubuntu), 1d CNN"
+excerpt: "python(vevn, Ubuntu), 1d CNN, keras"
 categories: [단체 프로젝트]
 comments: true
 share : false
@@ -13,7 +13,7 @@ share : false
 
 ## 시작
 아는 분에게 머신 러닝을 이용해 보안관련 프로젝트 진행하려고 한다고 연락이 왔다. *(프젝 필수요건이 ML이었다)*  
-3~4월쯤?에 같이 하자고 연락이 왔었는데, 이 당시 [퍼듀 K-SW 여름 프로그램]({{ site.url }}/articles/2019-08-16-purdue_summer_program)(*포스트 아직 완성못해서 링크 안먹힘*)
+3~4월쯤?에 같이 하자고 연락이 왔었는데, 이 당시 [퍼듀 K-SW 여름 프로그램]({{ site.url }}/articles/2019-08-16-K-SW_summer_program)(*포스트 아직 완성못해서 링크 안먹힘*)
 에 지원한 상태여서 확답을 못 드렸던 기억이 난다.  
 여차저차해서 일단 이름은 올려두었는데, 결국 여름에 퍼듀에 가게 되어서 잠깐 프로젝트 진행을 못 했었지만
 돌아와 2019년 12월 12일?까지 참여했었다..
