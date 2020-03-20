@@ -1,8 +1,9 @@
 - name: Ewha Womans University
   link: http://www.ewha.ac.kr/
   date: 2017 - <i class="fa fa-clock-o" aria-hidden="true" title="Until Now"></i>
-  descr: <br> (expected graduation in 2021)
+  descr: expected graduation in 2022
 
-- name: Purdue University Summer Program
+- name: Purdue University
   link: https://www.purdue.edu/
   date: 2019. 07 - 2019. 08
+  descr: for K-SW Summer Program
