@@ -2,5 +2,5 @@
 
 label: Ability
 id : cs
-aspects: Python, C++, Django, html/css, Adobe
-percentage: 80, 40, 30, 50, 70
+aspects: Python, Java/Spring Boot, html/css, golang, Adobe
+percentage: 70, 70, 50, 20, 50

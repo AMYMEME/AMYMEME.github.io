@@ -2,7 +2,7 @@
 # if you don't have language feature(language.yml is empty), ignore "i18n" items
 
 - name: NAVER Clova SW internship
-  link: https://naver.com
-  date: Apr 2020 - <i class="fa fa-clock-o" aria-hidden="true" title="Until Now"></i>
-  role:
+  link: https://developers.naver.com/products/clova/cic/
+  date: Apr 2020 - July 2020
+  role: Backend development in AI Product
 
