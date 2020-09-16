@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 사이드 프로젝트 - 게시판 만들
+title: 사이드 프로젝트 - 게시판 만들기
 excerpt: "golang, MySQL, Vue.js, REST, OAuth2"
 categories: [개인 프로젝트]
 comments: true
