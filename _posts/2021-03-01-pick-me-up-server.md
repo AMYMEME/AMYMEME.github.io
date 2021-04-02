@@ -207,16 +207,9 @@ public interface ProjectRepository extends JpaRepository<Project, Long>, JpaSpec
 	Page<Project> findAll(Specification<Project> specification, Pageable pageable);
 }
 ```
-레포지토리를 상속 받을 때 `JpaSepcificationExecutor<엔티티클래스, PK타입>`을 하나 더 상속하면 파라미터로 `Specification`을 넣을 수 있다.
+레포지토리를 상속 받을 때 `JpaSepcificationExecutor<엔티티클래스, PK타입>`을 하나 더 상속하면 파라미터로 `Specification`을 넣을 수 있다.  
 
-레포지토리를 이렇게 정의하고, 
-```java
-public interface ProjectRepository extends JpaRepository<Project, Long>, JpaSpecificationExecutor<Project> {
-	Page<Project> findAll(Specification<Project> specification, Pageable pageable);
-}
-```
-
-`Specification` 클래스를 따로 만들어 준다. 
+레포지토리를 위와 같이 정의하고, `Specification` 클래스를 따로 만들어 준다. 
 
 ```java
 import org.springframework.data.jpa.domain.Specification;
@@ -306,10 +299,10 @@ SELECT tag_id, SUM(score) from tag_history GROUP BY tag_id ORDER BY SUM(score) L
 
 ```java
 CriteriaBuilder builder = entityManager.getCriteriaBuilder();
-
 CriteriaQuery<TagHistoryGroupByDto> query = builder.createQuery(TagHistoryGroupByDto.class);
+Root<TagHistory> root = query.from(TagHistory.class);
 
-Root<TagHistory> root = query.from(TagHistory.class);query.groupBy(root.get("tag"));
+query.groupBy(root.get("tag"));
 query.multiselect(root.get("tag"), builder.sum(root.get("score")));
 query.orderBy(builder.desc(root.get("score")));
 
@@ -378,13 +371,14 @@ public class TagService {
 
 
 ## 배포
-`AWS` 배포는 직접적으로 서버에 접근할 수 있으므로 리눅스가 익숙하다면 매우 쉽다.
+`AWS` 배포는 처음해봤는데, 직접적으로 서버에 접근할 수 있으므로 리눅스가 익숙하다면 매우 쉬운 편이라고 느꼈다.  
  
 ### EC2
-`EC2`에서 인스턴스를 프리티어로 생성한다. `AMI`는 `Amazon Linux 2 AMI (HVM), SSD Volume Type -`으로 설정하였고, 
+`EC2`에서 인스턴스를 프리티어로 생성한다. `AMI`는 가장 호환성이 좋다는 
+`Amazon Linux 2 AMI (HVM), SSD Volume Type -`으로 설정하였고, 
 인스턴스에 직접적으로 들어가는 방법은 키 페어(`.pem`)와 `ssh`를 이용하면 된다. 
 
-인스턴스가 들어가보면 `yum` 및 `rps`는 되지만, `apt-get`같은 우분투 기반 명령어는 먹히지 않는다.
+인스턴스가 들어가보면 레드햇 계열인지 `yum` 및 `rpm`는 되지만, `apt-get`같은 우분투 기반 명령어는 먹히지 않는다.
 
 #### 1. JAVA 설치  
 ```bash
@@ -455,8 +449,9 @@ tail nohup.out
 
 `application.yml`과 `application-aws.yml`은 pull 후에 덮어쓰므로, 다음 배포 시 `pull` 할 때에 `push`하지 않아서 에러가 난다.  
 따라서 `local`을 `overwrite`하는 경우를 찾아보니 [관련 스택오버플로우](https://stackoverflow.com/questions/1125968/how-do-i-force-git-pull-to-overwrite-local-files) 글을 찾았다.  
-리모트의 가져오기만 하는 `fetch` 사용한 후에, `reset --hard`로 해당 컬로 돌아가고, `pull --force`를 한다.  
-사실 `pull --force`는 필요없긴 한데, 이후 안정성을 위해 넣어준다. 
+리모트를 로컬과 맞추기보다 업데이트된 리모트 코드 부분만 가져오는 `fetch`를 사용한 후에, `reset --hard`로 로컬과 맞추고, `pull --force`를 한다.  
+사실 `pull --force`는 필요없긴 한데, 이후 안정성을 위해 넣어준다.  
+매번 프로젝트를 삭제하고 `git pull`하고 하기엔 시간이 너무 오래 걸려서 이러한 방법을 썼는데, 꽤 효과적이었다.  
 
 그리고 이전 `nohup.out` 파일이 계속 쌓이다보니 지워주었는데, 나중에 로깅 스택을 구축하면 다른 곳에 쌓일 거라 생각해 이렇게 하였다.  
 
@@ -468,7 +463,8 @@ tail nohup.out
 
 
 ### FE 연동
-FE 연동에 있어서도 약간의 이슈들이 있었다. 
+`FE` 연동에 있어서도 약간의 이슈들이 있었다.
+ 
 #### CORS
 `nginx`로 한꺼번에 배포하지 않고 이미 `FE`가 `vercel`으로 떠있었기 때문에 도메인이 달라 `CORS` 에러가 발생하였다.
 이를 해결하기 위해서는 여러 방법이 있는데, [baeldung](https://www.baeldung.com/spring-cors)에 잘 정리된 포스트가 있어서 참고하였다. 
@@ -492,7 +488,7 @@ public class WebConfig implements WebMvcConfigurer {
 ```
  
 처음에 설정했는데도 `DELETE` 메서드만 `CORS` 에러가 나서 살펴보니 
-`allowedMethods`를 써주지 않으면 기본적인 `http method`들만을 허용한다고 공식 문서에서 본 것 같다.
+`allowedMethods`를 써주지 않으면 기본적인 `http method`들만을 허용한다고 공식 문서?에서 본 것 같아서 메서드를 써주니까 해결되었다.  
 
 이미지를 등록하거나 수정할 시에 `Location` 헤더로 `S3`의 `URL`을 보내므로 헤더 허용 설정을 추가해주었다. 
  
@@ -505,8 +501,7 @@ public class WebConfig implements WebMvcConfigurer {
 12개월(1년)을 무료로 이용할 수 있다고 한다.  
 
 #### 2. Route53
-1에서 구입한 도메인을 `AWS Route53`에서 호스팅 영역으로 추가한다. 
-추가 후 1에서 구입한 도메인의 `NS`를 `AWS`에서 보이는 `NS`로 교체해야 한다. 
+1에서 구입한 도메인의 `NS`를 `AWS`에서 보이는 `NS`로 교체해야 한다. 
 1번 사이트에서 `Service > My Domains > Manage Domain > Management Tools > Nameservers`로 들어가
 `Route 53`에서 보이는 `NS`로 수정해주면 된다.
 
@@ -519,11 +514,11 @@ public class WebConfig implements WebMvcConfigurer {
 **리스너**는 로드밸런서가 **외부에서** 받아들이는 포트인데, 이를 3에서 만든 `SSL` 인증서를 통해 만들어 준다. 
 그리고 보안 규칙을 통해 `http 80`으로 들어온 트래픽을 자동으로 `https 443`로 리다이렉팅 해준다. 
 
-참고로 비슷하게 `EC2` 보안 규칙이 설정 방식이 비슷해서 헷갈렸었다. 
-보안 규칙 중 인바운드 규칙은 안에서 어떤 포트로 통신하는지를 고려해야 한다.  
+참고로 `EC2` 보안 규칙 중 인바운드 규칙이 로드밸런서와 비슷해서 헷갈렸었다. 
+인바운드 규칙은 안에서 어떤 포트로 통신하는지를 고려해야 한다.  
 나같은 경우는 스프링부트가 기본 포트 `8080`으로 설정되어 있으므로 `TCP 8080`을 설정해주어야 한다.
-나머지 `http 80`이나 `https 443`같은 경우도 기본으로 설정해준다.  
 또한 `ssh`로 인스턴스 쉘에 접근을 하므로(배포 때처럼) 이미 `ssh 22`가 설정되어 있다.  
+마찬가지로 접근 시에 필요한 나머지 `http 80`이나 `https 443`같은 경우도 기본으로 설정해주어야 한다.  
 {: .notice}
 
 
