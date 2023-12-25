@@ -14,13 +14,9 @@
   descr: "'생체인식과 블록체인을 활용한 환자 중심 의료 장부 관리 시스템' 논문 작성 및 발표, 예·본·결선 진출, 최종 장려상 수상"
   term: "2019.06.05."
 
-- name: 2019 CTF(Capture The Flag, 해킹방어대회)s
-  descr: "participated in NACTF(Newark Academy CTF), PICO CTF, Power Of XX CTF"
-  term: "2019.09. ~ 2019.12."
-
-- name: 시큐어코딩프로젝트(Security Coding Project)
-  descr: "2019 행안부 SW 개발보안 가이드를 준수한 안전한 웹페이지 구현"
-  term: "2019.09.15. ~ 2019.12.01."
+# - name: 시큐어코딩프로젝트(Security Coding Project)
+#   descr: "2019 행안부 SW 개발보안 가이드를 준수한 안전한 웹페이지 구현"
+#   term: "2019.09.15. ~ 2019.12.01."
 
 - name: K-사이버 시큐리티 정보보호 R&D 데이터 챌린지
   descr: "융합보안트랙 자동차용 침입 탐지 부문, 차량 내부 네트워크 데이터셋 기반 침입 탐지 알고리즘(Loose Ground Truth Algorithm) 개발, 예·본선 진출 및 최종 본선 3위, 한국정보보호학회회장상 수여"

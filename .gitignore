@@ -6,3 +6,6 @@ _drafts
 .ruby-version
 Gemfile.lock
 .idea
+
+vendor
+.bundle

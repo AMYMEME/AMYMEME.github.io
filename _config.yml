@@ -5,9 +5,9 @@
 #
 title: 이번 삽은 얼마나 갈까
 email:
-description: t3rry's personal blog !
+description: The amy's portfolio blog
 url: # the base hostname & protocol for your site
-keywords: ["blog", "jekyll"]
+keywords: ["blog", "jekyll", "amy"]
 
 #
 ###################################
@@ -32,9 +32,9 @@ kramdown:
 ####################################
 #
 owner:
-  name: t3rry
+  name: amymeme
   avatar: profile.png
-  job: "University Student in Seoul"
+  job: "Server Developer"
   bio: "삽은 많다. 이번 삽은 얼마나 갈까."
   email: cgc8016@ewhain.net
   disqus-shortname: #
@@ -49,7 +49,7 @@ owner:
   bing-verify:
   github: AMYMEME
   gitlab: #username
-  stackoverflow: 12804021/amy
+  stackoverflow: #12804021/amy
   linkedin: seulgi-choi-b8623519b
   skype: #username
   xing: #username
